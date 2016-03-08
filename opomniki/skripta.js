@@ -25,5 +25,17 @@ window.addEventListener('load', function() {
 		
 	}
 	
+	var dodajOpomnik=function (event) {
+		var naziv = document.querySelector("#naziv_opomnika").value;
+		var cas = document.querySelector("#cas_opomnika").value;
+		document.querySelector("#naziv_opomnika").value="";
+		document.querySelector("#cas_opomnika").value="";
+		
+		var koda = '<div class="opomnik"><div class="naziv_opomnika">'+naziv+'</div><div class="cas_opomnika"> Opomnik čez <span>'+cas+'</span> sekund.</div></div>';
+		
+		document.querySelector("#lol").innerHTML += koda;
+	}
+	
 	document.querySelector("#prijavniGumb").addEventListener('click', prijavi);
+	document.querySelector("#dodajGumb").addEventListener('click', dodajOpomnik);
 });
